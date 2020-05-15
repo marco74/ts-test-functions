@@ -2,7 +2,7 @@
   "name": "ts-test-functions",
   "version": "0.0.1",
   "description": "Test functions in TypeScript",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "build": "tsc",
     "test": "mocha --reporter spec --require ts-node/register test/*.ts"
