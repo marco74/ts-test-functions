@@ -1,7 +1,8 @@
 export default class observer {
     constructor();
-    private fn;
     private calls;
+    private returnvalue;
+    private fn;
     callcount(): number;
     call(index: number): any[];
     calledoncewith(...args: any[]): boolean;

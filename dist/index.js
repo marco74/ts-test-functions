@@ -2,7 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var observer = /** @class */ (function () {
     function observer() {
+        var _this = this;
         this.calls = [];
+        this.fn = function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            _this.calls.push(args);
+            return _this.returnvalue;
+        };
     }
     observer.prototype.callcount = function () {
         return this.calls.length;
@@ -29,15 +38,7 @@ var observer = /** @class */ (function () {
         return true;
     };
     observer.prototype.fake = function (returnvalue) {
-        var _this = this;
-        this.fn = function () {
-            var args = [];
-            for (var _i = 0; _i < arguments.length; _i++) {
-                args[_i] = arguments[_i];
-            }
-            _this.calls.push(args);
-            return returnvalue;
-        };
+        this.returnvalue = returnvalue;
         return this.fn;
     };
     return observer;
