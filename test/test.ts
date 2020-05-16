@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import observer from '../lib';
+import observer from '../lib/index';
 
 describe("observer class", () => {
 	let obs1:observer;
