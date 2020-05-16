@@ -5,5 +5,13 @@
 		"module":"commonjs",
 		"outDir":"./dist",
 		"strict":true
-	}
+	},
+	"include": [
+		"lib/**/*"
+	],
+	"exclude": [
+		"node_modules",
+		"dist",
+		"test"
+	]
 }
