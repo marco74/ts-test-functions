@@ -1,8 +1,12 @@
 export default class observer {
 	constructor() {}
 
-	private fn:Function | undefined;
 	private calls:any[][] = [];
+	private returnvalue:undefined | any;
+	private fn:Function = (...args:any[]) => {
+		this.calls.push(args);
+		return this.returnvalue;
+	}
 	public callcount () {
 		return this.calls.length;
 	}
@@ -27,11 +31,7 @@ export default class observer {
 	}
 
 	public fake(returnvalue?:any) {
-		
-		this.fn = (...args:any[]) => {
-			this.calls.push(args);
-			return returnvalue;
-		}
+		this.returnvalue = returnvalue;
 		return this.fn; 
 	}
 }
