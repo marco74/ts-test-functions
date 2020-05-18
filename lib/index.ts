@@ -5,7 +5,7 @@ export default class observer {
 
 	private calls:any[][] = [];
 	private returnvalue:undefined | any;
-	private fn(...args:any[]):genericfunction {
+	private fn:genericfunction = (...args:any[]) => {
 		this.calls.push(args);
 		return this.returnvalue;
 	}
