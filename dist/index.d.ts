@@ -1,3 +1,4 @@
+declare type genericfunction = (...args: any[]) => void | any;
 export default class observer {
     constructor();
     private calls;
@@ -6,5 +7,6 @@ export default class observer {
     callcount(): number;
     call(index: number): any[];
     calledoncewith(...args: any[]): boolean;
-    fake(returnvalue?: any): Function;
+    fake(returnvalue?: any): genericfunction;
 }
+export {};
