@@ -3,7 +3,7 @@ export default class observer {
 
 	private calls:any[][] = [];
 	private returnvalue:undefined | any;
-	private fn:(...args: any[]) => void = (...args:any[]) => {
+	private fn:(...args: any[]) => void | any = (...args:any[]) => {
 		this.calls.push(args);
 		return this.returnvalue;
 	}
