@@ -1,9 +1,11 @@
+type genericfunction = (...args: any[]) => void | any;
+
 export default class observer {
 	constructor() {}
 
 	private calls:any[][] = [];
 	private returnvalue:undefined | any;
-	private fn:(...args: any[]) => void | any = (...args:any[]) => {
+	private fn(...args:any[]):genericfunction {
 		this.calls.push(args);
 		return this.returnvalue;
 	}
@@ -30,7 +32,7 @@ export default class observer {
 		return true;
 	}
 
-	public fake(returnvalue?:any) {
+	public fake(returnvalue?:any):genericfunction {
 		this.returnvalue = returnvalue;
 		return this.fn; 
 	}
